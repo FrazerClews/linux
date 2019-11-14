@@ -25,9 +25,7 @@
 # ----------------- LIBRARIES --------------------
 
 import sys
-import time
 import os
-import string
 import re
 import platform
 import shutil

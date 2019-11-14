@@ -20,7 +20,6 @@ from __future__ import print_function
 import os
 import sys
 import math
-import struct
 import sqlite3
 
 sys.path.append(os.environ['PERF_EXEC_PATH'] + \

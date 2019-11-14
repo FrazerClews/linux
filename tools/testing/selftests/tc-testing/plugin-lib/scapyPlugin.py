@@ -1,10 +1,6 @@
 #!/usr/bin/env python3
 
-import os
-import signal
 from string import Template
-import subprocess
-import time
 from TdcPlugin import TdcPlugin
 
 from tdc_config import *

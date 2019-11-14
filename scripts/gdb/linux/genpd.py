@@ -3,7 +3,6 @@
 # Copyright (c) NXP 2019
 
 import gdb
-import sys
 
 from linux.utils import CachedType
 from linux.lists import list_for_each_entry

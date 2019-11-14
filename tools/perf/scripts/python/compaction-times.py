@@ -4,7 +4,6 @@
 # testing:
 # 'echo 1 > /proc/sys/vm/compact_memory' to force compaction of all zones
 
-import os
 import sys
 import re
 

@@ -2,11 +2,8 @@
 
 import hashlib
 import os
-import socket
 import struct
 import sys
-import unittest
-from fcntl import ioctl
 
 
 TPM2_ST_NO_SESSIONS = 0x8001

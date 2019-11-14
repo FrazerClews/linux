@@ -22,7 +22,6 @@ from string import Template
 from tdc_config import *
 from tdc_helper import *
 
-import TdcPlugin
 from TdcResults import *
 
 class PluginDependencyException(Exception):

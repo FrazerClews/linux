@@ -4,12 +4,8 @@ as a separate test.
 '''
 
 
-import os
 import re
-import signal
-from string import Template
 import subprocess
-import time
 from TdcPlugin import TdcPlugin
 from TdcResults import *
 

@@ -3,7 +3,6 @@
 # Copyright (c) NXP 2019
 
 import gdb
-import sys
 
 from linux import utils, lists, constants
 

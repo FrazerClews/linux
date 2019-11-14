@@ -13,7 +13,7 @@
 
 import gdb
 
-from linux import cpus, utils, lists
+from linux import utils, lists
 
 
 module_type = utils.CachedType("struct module")

@@ -271,7 +271,7 @@ static void mac_onboard_sonic_ethernet_addr(struct net_device *dev)
 		                    "PROM, trying CAM\n");
 	}
 
-	/* This only works if MacOS has already initialized the card. */
+	/* This only works if macOS has already initialized the card. */
 
 	SONIC_WRITE(SONIC_CMD, SONIC_CR_RST);
 	SONIC_WRITE(SONIC_CEP, 15);
@@ -355,7 +355,7 @@ static int mac_onboard_sonic_probe(struct net_device *dev)
 		SONIC_READ(SONIC_SR), lp->dma_bitmode ? 32 : 16,
 		lp->reg_offset);
 
-	/* This is sometimes useful to find out how MacOS configured the card */
+	/* This is sometimes useful to find out how macOS configured the card */
 	pr_debug("%s: DCR=0x%04x, DCR2=0x%04x\n", __func__,
 		 SONIC_READ(SONIC_DCR) & 0xffff,
 		 SONIC_READ(SONIC_DCR2) & 0xffff);
@@ -489,7 +489,7 @@ static int mac_sonic_nubus_probe_board(struct nubus_board *board, int id,
 		 board->name, SONIC_READ(SONIC_SR),
 		 lp->dma_bitmode ? 32 : 16, lp->reg_offset);
 
-	/* This is sometimes useful to find out how MacOS configured the card */
+	/* This is sometimes useful to find out how macOS configured the card */
 	dev_dbg(&board->dev, "%s: DCR=0x%04x, DCR2=0x%04x\n", __func__,
 		SONIC_READ(SONIC_DCR) & 0xffff,
 		SONIC_READ(SONIC_DCR2) & 0xffff);

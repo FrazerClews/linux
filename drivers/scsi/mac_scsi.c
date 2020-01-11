@@ -95,7 +95,7 @@ __setup("mac5380=", mac_scsi_setup);
 #endif /* !MODULE */
 
 /*
- * According to "Inside Macintosh: Devices", Mac OS requires disk drivers to
+ * According to "Inside Macintosh: Devices", macOS requires disk drivers to
  * specify the number of bytes between the delays expected from a SCSI target.
  * This allows the operating system to "prevent bus errors when a target fails
  * to deliver the next byte within the processor bus error timeout period."

@@ -2603,7 +2603,7 @@ static void __init probe_uninorth(void)
 		UN_OUT(UNI_N_ARB_CTRL, actrl);
 	}
 
-	/* Some more magic as done by them in recent MacOS X on UniNorth
+	/* Some more magic as done by them in recent macOS on UniNorth
 	 * revs 1.5 to 2.O and Pangea. Seem to toggle the UniN Maxbus/PCI
 	 * memory timeout
 	 */

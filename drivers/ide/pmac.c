@@ -127,7 +127,7 @@ static const char* model_name[] = {
  * registers seem to exist but I can't tell much about them.
  * 
  * So far, I'm using pre-calculated tables for this extracted from
- * the values used by the MacOS X driver.
+ * the values used by the macOS driver.
  * 
  * The "PIO" register controls PIO and MDMA timings, the "ULTRA"
  * register controls the UDMA timings. At least, it seems bit 0
@@ -393,7 +393,7 @@ kauai_lookup_timing(struct kauai_timing* table, int cycle_time)
  * KeyLargo ATA66, we have to keep that delay around. I may end
  * up not hard resetting anymore on these and keep the delay only
  * for older interfaces instead (we have to reset when coming
- * from MacOS...) --BenH. 
+ * from macOS...) --BenH.
  */
 #define IDE_WAKEUP_DELAY	(1*HZ)
 

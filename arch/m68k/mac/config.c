@@ -855,7 +855,7 @@ static void __init mac_identify(void)
 	/*
 	 * We need to pre-init the IOPs, if any. Otherwise
 	 * the serial console won't work if the user had
-	 * the serial ports set to "Faster" mode in MacOS.
+	 * the serial ports set to "Faster" mode in macOS.
 	 */
 	iop_preinit();
 

@@ -611,7 +611,7 @@ int snd_pmac_burgundy_init(struct snd_pmac *chip)
 
 	/* Checks to see the chip is alive and kicking */
 	if ((in_le32(&chip->awacs->codec_ctrl) & MASK_ERRCODE) == 0xf0000) {
-		printk(KERN_WARNING "pmac burgundy: disabled by MacOS :-(\n");
+		printk(KERN_WARNING "pmac burgundy: disabled by macOS :-(\n");
 		return 1;
 	}
 

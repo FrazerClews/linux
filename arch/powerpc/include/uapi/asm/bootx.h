@@ -1,7 +1,7 @@
 /* SPDX-License-Identifier: GPL-2.0 WITH Linux-syscall-note */
 /*
  * This file describes the structure passed from the BootX application
- * (for MacOS) when it is used to boot Linux.
+ * (for macOS) when it is used to boot Linux.
  *
  * Written by Benjamin Herrenschmidt.
  */
@@ -88,14 +88,14 @@ typedef struct boot_infos
     __u32       deviceTreeOffset;        /* Device tree offset */
     __u32       deviceTreeSize;          /* Size of the device tree */
 
-    /* Some infos about the current MacOS display */
+    /* Some infos about the current macOS display */
     __u32       dispDeviceRect[4];       /* left,top,right,bottom */
     __u32       dispDeviceDepth;         /* (8, 16 or 32) */
     __u8*       dispDeviceBase;          /* base address (physical) */
     __u32       dispDeviceRowBytes;      /* rowbytes (in bytes) */
     __u32       dispDeviceColorsOffset;  /* Colormap (8 bits only) or 0 (*) */
     /* Optional offset in the registry to the current
-     * MacOS display. (Can be 0 when not detected) */
+     * macOS display. (Can be 0 when not detected) */
      __u32      dispDeviceRegEntryOffset;
 
     /* Optional pointer to boot ramdisk (offset from this structure) */

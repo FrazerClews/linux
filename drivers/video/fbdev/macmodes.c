@@ -1,5 +1,5 @@
 /*
- *  linux/drivers/video/macmodes.c -- Standard MacOS video modes
+ *  linux/drivers/video/macmodes.c -- Standard macOS video modes
  *
  *	Copyright (C) 1998 Geert Uytterhoeven
  *
@@ -23,7 +23,7 @@
 #include "macmodes.h"
 
     /*
-     *  MacOS video mode definitions
+     *  macOS video mode definitions
      *
      *  Order IS important! If you change these, don't forget to update
      *  mac_modes[] below!
@@ -130,7 +130,7 @@ static const struct fb_videomode mac_modedb[] = {
 
 
     /*
-     *  Mapping between MacOS video mode numbers and video mode definitions
+     *  Mapping between macOS video mode numbers and video mode definitions
      *
      *  These MUST be ordered in
      *    - increasing resolution
@@ -175,7 +175,7 @@ static const struct mode_map {
 
 
     /*
-     *  Mapping between monitor sense values and MacOS video mode numbers
+     *  Mapping between monitor sense values and macOS video mode numbers
      */
 
 static const struct monitor_map {
@@ -207,11 +207,11 @@ static const struct monitor_map {
 
 /**
  *	mac_vmode_to_var - converts vmode/cmode pair to var structure
- *	@vmode: MacOS video mode
- *	@cmode: MacOS color mode
+ *	@vmode: macOS video mode
+ *	@cmode: macOS color mode
  *	@var: frame buffer video mode structure
  *
- *	Converts a MacOS vmode/cmode pair to a frame buffer video
+ *	Converts a macOS vmode/cmode pair to a frame buffer video
  *	mode structure.
  *
  *	Returns negative errno on error, or zero for success.
@@ -288,12 +288,12 @@ int mac_vmode_to_var(int vmode, int cmode, struct fb_var_screeninfo *var)
 EXPORT_SYMBOL(mac_vmode_to_var);
 
 /**
- *	mac_var_to_vmode - convert var structure to MacOS vmode/cmode pair
+ *	mac_var_to_vmode - convert var structure to macOS vmode/cmode pair
  *	@var: frame buffer video mode structure
- *	@vmode: MacOS video mode
- *	@cmode: MacOS color mode
+ *	@vmode: macOS video mode
+ *	@cmode: macOS color mode
  *
- *	Converts a frame buffer video mode structure to a MacOS
+ *	Converts a frame buffer video mode structure to a macOS
  *	vmode/cmode pair.
  *
  *	Returns negative errno on error, or zero for success.
@@ -357,10 +357,10 @@ int mac_var_to_vmode(const struct fb_var_screeninfo *var, int *vmode,
  *	mac_map_monitor_sense - Convert monitor sense to vmode
  *	@sense: Macintosh monitor sense number
  *
- *	Converts a Macintosh monitor sense number to a MacOS
+ *	Converts a Macintosh monitor sense number to a macOS
  *	vmode number.
  *
- *	Returns MacOS vmode video mode number.
+ *	Returns macOS vmode video mode number.
  *
  */
 

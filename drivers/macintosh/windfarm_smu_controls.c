@@ -63,7 +63,7 @@ static int smu_set_fan(int pwm, u8 id, u16 value)
 	/* The SMU has an "old" and a "new" way of setting the fan speed
 	 * Unfortunately, I found no reliable way to know which one works
 	 * on a given machine model. After some investigations it appears
-	 * that MacOS X just tries the new one, and if it fails fallbacks
+	 * that macOS just tries the new one, and if it fails fallbacks
 	 * to the old ones ... Ugh.
 	 */
  retry:

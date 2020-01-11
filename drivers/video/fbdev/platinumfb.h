@@ -158,7 +158,7 @@ static struct platinum_regvals platinum_reg_init_14 = {
 /* 832x624, 75Hz (13) */
 static struct platinum_regvals platinum_reg_init_13 = {
 	0x70,
-	{ 864, 1680, 3344 },	/* MacOS does 1680 instead of 1696 to fit 16bpp in 1MB,
+	{ 864, 1680, 3344 },	/* macOS does 1680 instead of 1696 to fit 16bpp in 1MB,
 				 * and we use 3344 instead of 3360 to fit in 2Mb
 				 */
 	{ 0xff0, 4, 0, 0, 0, 0, 0x299, 0,

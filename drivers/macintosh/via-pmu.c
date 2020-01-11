@@ -1904,7 +1904,7 @@ static int powerbook_sleep_grackle(void)
 	pmac_call_feature(PMAC_FTR_SLEEP_STATE,NULL,0,1);
 
 	pci_read_config_word(grackle, 0x70, &pmcr1);
-	/* Apparently, MacOS uses NAP mode for Grackle ??? */
+	/* Apparently, macOS uses NAP mode for Grackle ??? */
 	pmcr1 &= ~(GRACKLE_DOZE|GRACKLE_SLEEP); 
 	pmcr1 |= GRACKLE_PM|GRACKLE_NAP;
 	pci_write_config_word(grackle, 0x70, pmcr1);

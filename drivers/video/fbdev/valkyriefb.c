@@ -203,7 +203,7 @@ static int valkyriefb_blank(int blank_mode, struct fb_info *info)
 	case FB_BLANK_VSYNC_SUSPEND:
 	case FB_BLANK_HSYNC_SUSPEND:
 		/*
-		 * [kps] Value extracted from MacOS. I don't know
+		 * [kps] Value extracted from macOS. I don't know
 		 * whether this bit disables hsync or vsync, or
 		 * whether the hardware can do the other as well.
 		 */

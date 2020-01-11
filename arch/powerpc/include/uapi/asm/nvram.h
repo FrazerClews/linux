@@ -24,15 +24,15 @@
 #define NVRAM_SIG_VEND	0x7e	/* vendor defined */
 #define NVRAM_SIG_FREE	0x7f	/* Free space */
 #define NVRAM_SIG_OS	0xa0	/* OS defined */
-#define NVRAM_SIG_PANIC	0xa1	/* Apple OSX "panic" */
+#define NVRAM_SIG_PANIC	0xa1	/* Apple macOS "panic" */
 
 
 /* PowerMac specific nvram stuffs */
 
 enum {
 	pmac_nvram_OF,		/* Open Firmware partition */
-	pmac_nvram_XPRAM,	/* MacOS XPRAM partition */
-	pmac_nvram_NR		/* MacOS Name Registry partition */
+	pmac_nvram_XPRAM,	/* macOS XPRAM partition */
+	pmac_nvram_NR		/* macOS Name Registry partition */
 };
 
 

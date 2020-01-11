@@ -850,7 +850,7 @@ static int hfsplus_osx_getxattr(const struct xattr_handler *handler,
 
 	/*
 	 * osx is the namespace we use to indicate an unprefixed
-	 * attribute on the filesystem (like the ones that OS X
+	 * attribute on the filesystem (like the ones that macOS
 	 * creates), so we pass the name through unmodified (after
 	 * ensuring it doesn't conflict with another namespace).
 	 */
@@ -871,7 +871,7 @@ static int hfsplus_osx_setxattr(const struct xattr_handler *handler,
 
 	/*
 	 * osx is the namespace we use to indicate an unprefixed
-	 * attribute on the filesystem (like the ones that OS X
+	 * attribute on the filesystem (like the ones that macOS
 	 * creates), so we pass the name through unmodified (after
 	 * ensuring it doesn't conflict with another namespace).
 	 */

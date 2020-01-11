@@ -120,7 +120,7 @@ Other systems
 -------------
 
 At this moment, drivers for any other systems have not been tested.
-Knowing how MacOS is based on BSD and BSD is an Open Source it is
+Knowing how macOS is based on BSD and BSD is an Open Source it is
 believed that it should (read: "I have no idea whether it will") work
 out-of-the-box.
 

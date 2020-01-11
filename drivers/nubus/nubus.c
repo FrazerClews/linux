@@ -39,10 +39,10 @@ LIST_HEAD(nubus_func_rsrcs);
    The card ROM may appear on any or all bytes of each long word in
    NuBus memory.  The low 4 bits of the "map" value found in the
    format block (at the top of the slot address space, as well as at
-   the top of the MacOS ROM) tells us which bytelanes, i.e. which byte
+   the top of the macOS ROM) tells us which bytelanes, i.e. which byte
    offsets within each longword, are valid.  Thus:
 
-   A map of 0x0f, as found in the MacOS ROM, means that all bytelanes
+   A map of 0x0f, as found in the macOS ROM, means that all bytelanes
    are valid.
 
    A map of 0xf0 means that no bytelanes are valid (We pray that we
@@ -534,7 +534,7 @@ nubus_get_functional_resource(struct nubus_board *board, int slot,
 		}
 		case NUBUS_RESID_DRVRDIR:
 		{
-			/* MacOS driver.  If we were NetBSD we might
+			/* macOS driver.  If we were NetBSD we might
 			   use this :-) */
 			pr_debug("    driver directory offset: 0x%06x\n",
 				ent.data);

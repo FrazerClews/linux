@@ -663,9 +663,9 @@ static int __init offb_init(void)
 	if (fb_get_options("offb", NULL))
 		return -ENODEV;
 
-	/* Check if we have a MacOS display without a node spec */
+	/* Check if we have a macOS display without a node spec */
 	if (of_get_property(of_chosen, "linux,bootx-noscreen", NULL) != NULL) {
-		/* The old code tried to work out which node was the MacOS
+		/* The old code tried to work out which node was the macOS
 		 * display based on the address. I'm dropping that since the
 		 * lack of a node spec only happens with old BootX versions
 		 * (users can update) and with this code, they'll still get

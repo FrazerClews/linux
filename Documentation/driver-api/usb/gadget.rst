@@ -428,7 +428,7 @@ many applications for it won't require new kernel mode software. Linux
 can stream data with only slightly more overhead than a kernel driver.
 
 There's a USB Mass Storage class driver, which provides a different
-solution for interoperability with systems such as MS-Windows and MacOS.
+solution for interoperability with systems such as MS-Windows and macOS.
 That *Mass Storage* driver uses a file or block device as backing store
 for a drive, like the ``loop`` driver. The USB host uses the BBB, CB, or
 CBI versions of the mass storage class specification, using transparent

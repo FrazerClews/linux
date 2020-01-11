@@ -21,7 +21,7 @@ How to use _OSI
 
 Linux runs on two groups of machines -- those that are tested by the OEM
 to be compatible with Linux, and those that were never tested with Linux,
-but where Linux was installed to replace the original OS (Windows or OSX).
+but where Linux was installed to replace the original OS (Windows or macOS).
 
 The larger group is the systems tested to run only Windows.  Not only that,
 but many were tested to run with just one specific version of Windows.
@@ -170,11 +170,11 @@ Apple Mac and _OSI("Darwin")
 ============================
 
 On Apple's Mac platforms, the ACPI BIOS invokes _OSI("Darwin")
-to determine if the machine is running Apple OSX.
+to determine if the machine is running Apple macOS.
 
 Like Linux's _OSI("*Windows*") strategy, Linux defaults to
 answering YES to _OSI("Darwin") to enable full access
-to the hardware and validated BIOS paths seen by OSX.
+to the hardware and validated BIOS paths seen by macOS.
 Just like on Windows-tested platforms, this strategy has risks.
 
 Starting in Linux-3.18, the kernel answered YES to _OSI("Darwin")

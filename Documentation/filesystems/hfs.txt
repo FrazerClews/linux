@@ -17,7 +17,7 @@ Mount options
 When mounting an HFS filesystem, the following options are accepted:
 
   creator=cccc, type=cccc
-	Specifies the creator/type values as shown by the MacOS finder
+	Specifies the creator/type values as shown by the macOS finder
 	used for creating new files.  Default values: '????'.
 
   uid=n, gid=n
@@ -63,7 +63,7 @@ the a little strange:
  o They are however created (with default values), deleted and renamed
    along with the corresponding data fork or directory.
  o Copying files to a different filesystem will loose those attributes
-   that are essential for MacOS to work.
+   that are essential for macOS to work.
 
 
 Creating HFS filesystems

@@ -1,5 +1,5 @@
 /*
- *  linux/drivers/video/macmodes.h -- Standard MacOS video modes
+ *  linux/drivers/video/macmodes.h -- Standard macOS video modes
  *
  *	Copyright (C) 1998 Geert Uytterhoeven
  *
@@ -14,7 +14,7 @@
     /*
      *  Video mode values.
      *  These are supposed to be the same as the values that Apple uses in
-     *  MacOS.
+     *  macOS.
      */
 
 #define VMODE_NVRAM		0

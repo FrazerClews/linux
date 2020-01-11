@@ -3,7 +3,7 @@
  *
  *     Copyright (C) 1998 by Michael Schmitz
  *
- *  This driver was written based on information obtained from the MacOS IDE
+ *  This driver was written based on information obtained from the macOS IDE
  *  driver binary by Mikael Forselius
  *
  *  This file is subject to the terms and conditions of the GNU General Public

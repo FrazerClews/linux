@@ -635,7 +635,7 @@ static void _InitOperationMode(struct adapter *padapter)
 		regBwOpMode = BW_OPMODE_5G;
 		break;
 
-	default: /* for MacOSX compiler warning. */
+	default: /* for macOS compiler warning. */
 		break;
 	}
 

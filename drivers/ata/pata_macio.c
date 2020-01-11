@@ -218,7 +218,7 @@ static const char* macio_ata_names[] = {
  * KeyLargo ATA66, we have to keep that delay around. I may end
  * up not hard resetting anymore on these and keep the delay only
  * for older interfaces instead (we have to reset when coming
- * from MacOS...) --BenH.
+ * from macOS...) --BenH.
  */
 #define IDE_WAKEUP_DELAY_MS	1000
 

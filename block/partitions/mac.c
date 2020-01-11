@@ -17,7 +17,7 @@ extern void note_bootable_part(dev_t dev, int part, int goodness);
 #endif
 
 /*
- * Code to understand MacOS partition tables.
+ * Code to understand macOS partition tables.
  */
 
 static inline void mac_fix_string(char *stg, int len)
@@ -61,7 +61,7 @@ int mac_partition(struct parsed_partitions *state)
 	part = (struct mac_partition *) (data + partoffset);
 	if (be16_to_cpu(part->signature) != MAC_PARTITION_MAGIC) {
 		put_dev_sector(sect);
-		return 0;		/* not a MacOS disk */
+		return 0;		/* not a macOS disk */
 	}
 	blocks_in_map = be32_to_cpu(part->map_count);
 	if (blocks_in_map < 0 || blocks_in_map >= DISK_MAX_PARTS) {

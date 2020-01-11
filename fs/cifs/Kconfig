@@ -28,7 +28,7 @@ config CIFS
 
 	  The SMB3 protocol is supported by most modern operating systems
 	  and NAS appliances (e.g. Samba, Windows 10, Windows Server 2016,
-	  MacOS) and even in the cloud (e.g. Microsoft Azure).
+	  macOS) and even in the cloud (e.g. Microsoft Azure).
 	  The older CIFS protocol was included in Windows NT4, 2000 and XP (and
 	  later) as well by Samba (which provides excellent CIFS and SMB3
 	  server support for Linux and many other operating systems). Use of

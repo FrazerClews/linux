@@ -11,7 +11,7 @@
  *	which measures the case temperature. The DS1775 sensor
  *	measures the CPU temperature. This driver tunes the
  *	behavior of the fan. It is based upon empirical observations
- *	of the 'AppleFan' driver under Mac OS X.
+ *	of the 'AppleFan' driver under macOS.
  *
  *	WARNING: This driver has only been testen on Apple's
  *	1.25 MHz Dual G4 (March 03). It is tuned for a CPU
@@ -234,7 +234,7 @@ setup_hardware( void )
 	/* The thermostat (which besides measureing temperature controls
 	 * has a THERM output which puts the fan on 100%) is usually
 	 * set to kick in at 80 C (chip default). We reduce this a bit
-	 * to be on the safe side (OSX doesn't)...
+	 * to be on the safe side (macOS doesn't)...
 	 */
 	if( x.overheat_temp == (80 << 8) ) {
 		x.overheat_temp = 75 << 8;

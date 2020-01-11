@@ -482,7 +482,7 @@ void __init bootx_init(unsigned long r3, unsigned long r4)
 	if (!BOOT_INFO_IS_V2_COMPATIBLE(bi))
 		bi->logicalDisplayBase = bi->dispDeviceBase;
 
-	/* Fixup depth 16 -> 15 as that's what MacOS calls 16bpp */
+	/* Fixup depth 16 -> 15 as that's what macOS calls 16bpp */
 	if (bi->dispDeviceDepth == 16)
 		bi->dispDeviceDepth = 15;
 

@@ -428,7 +428,7 @@ static int bcm5421_init(struct mii_phy* phy)
 
 	/* Revision 0 of 5421 needs some fixups */
 	if (id == 0x002060e0) {
-		/* This is borrowed from MacOS
+		/* This is borrowed from macOS
 		 */
 		sungem_phy_write(phy, 0x18, 0x1007);
 		data = sungem_phy_read(phy, 0x18);

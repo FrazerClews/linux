@@ -137,7 +137,7 @@ static int vidtest;
 
 /*
  * Unlike the Valkyrie, the DAFB cannot set individual colormap
- * registers.  Therefore, we do what the MacOS driver does (no
+ * registers.  Therefore, we do what the macOS driver does (no
  * kidding!) and simply set them one by one until we hit the one we
  * want.
  */

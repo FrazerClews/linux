@@ -570,7 +570,7 @@ static void dm_TXPowerTrackingCallback_TSSI(struct net_device *dev)
 			RT_TRACE(COMP_POWER_TRACKING, "TSSI_13dBm = %d\n", TSSI_13dBm);
 
 			/*if (abs(Avg_TSSI_Meas_from_driver - TSSI_13dBm) <= E_FOR_TX_POWER_TRACK)*/
-			/* For MacOS-compatible */
+			/* For macOS-compatible */
 			if (Avg_TSSI_Meas_from_driver > TSSI_13dBm)
 				delta = Avg_TSSI_Meas_from_driver - TSSI_13dBm;
 			else

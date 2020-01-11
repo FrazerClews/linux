@@ -452,7 +452,7 @@ static void ast_vhub_change_port_stat(struct ast_vhub *vhub,
 
 		/*
 		 * We only set USB_PORT_STAT_C_ENABLE if we are disabling
-		 * the port as per USB spec, otherwise MacOS gets upset
+		 * the port as per USB spec, otherwise macOS gets upset
 		 */
 		if (p->status & USB_PORT_STAT_ENABLE)
 			chg &= ~USB_PORT_STAT_C_ENABLE;

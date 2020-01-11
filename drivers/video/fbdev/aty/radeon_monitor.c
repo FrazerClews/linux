@@ -706,7 +706,7 @@ static void radeon_var_to_panel_info(struct radeonfb_info *rinfo, struct fb_var_
 	/* We use a default of 200ms for the panel power delay, 
 	 * I need to have a real schedule() instead of mdelay's in the panel code.
 	 * we might be possible to figure out a better power delay either from
-	 * MacOS OF tree or from the EDID block (proprietary extensions ?)
+	 * macOS OF tree or from the EDID block (proprietary extensions ?)
 	 */
 	rinfo->panel_info.pwr_delay = 200;
 }

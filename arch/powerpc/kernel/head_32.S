@@ -89,7 +89,7 @@ _ENTRY(_start);
  * pointer (r1) points to just below the end of the half-meg region
  * from 0x380000 - 0x400000, which is mapped in already.
  *
- * If we are booted from MacOS via BootX, we enter with the kernel
+ * If we are booted from macOS via BootX, we enter with the kernel
  * image loaded somewhere, and the following values in registers:
  *  r3: 'BooX' (0x426f6f58)
  *  r4: virtual address of boot_infos_t

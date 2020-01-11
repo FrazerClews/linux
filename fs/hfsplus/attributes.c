@@ -98,14 +98,14 @@ static int hfsplus_attr_build_record(hfsplus_attr_entry *entry, int record_type,
 {
 	if (record_type == HFSPLUS_ATTR_FORK_DATA) {
 		/*
-		 * Mac OS X supports only inline data attributes.
+		 * macOS supports only inline data attributes.
 		 * Do nothing
 		 */
 		memset(entry, 0, sizeof(*entry));
 		return sizeof(struct hfsplus_attr_fork_data);
 	} else if (record_type == HFSPLUS_ATTR_EXTENTS) {
 		/*
-		 * Mac OS X supports only inline data attributes.
+		 * macOS supports only inline data attributes.
 		 * Do nothing.
 		 */
 		memset(entry, 0, sizeof(*entry));
@@ -232,7 +232,7 @@ int hfsplus_create_attr(struct inode *inode,
 		goto failed_create_attr;
 	}
 
-	/* Mac OS X supports only inline data attributes. */
+	/* macOS supports only inline data attributes. */
 	entry_size = hfsplus_attr_build_record(entry_ptr,
 					HFSPLUS_ATTR_INLINE_DATA,
 					inode->i_ino,

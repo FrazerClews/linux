@@ -73,7 +73,7 @@ struct rackmeter {
 /* To be set as a tunable */
 static int rackmeter_ignore_nice;
 
-/* This GPIO is whacked by the OS X driver when initializing */
+/* This GPIO is whacked by the macOS driver when initializing */
 #define RACKMETER_MAGIC_GPIO	0x78
 
 /* This is copied from cpufreq_ondemand, maybe we should put it in
@@ -116,7 +116,7 @@ static void rackmeter_setup_i2s(struct rackmeter *rm)
 	udelay(10);
 
 	/* Then setup i2s. For now, we use the same magic value that
-	 * the OS X driver seems to use. We might want to play around
+	 * the macOS driver seems to use. We might want to play around
 	 * with the clock divisors later
 	 */
 	out_le32(rm->i2s_regs + 0x10, 0x01fa0000);

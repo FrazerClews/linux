@@ -1806,7 +1806,7 @@ static int mesh_resume(struct macio_dev *mdev)
 
 /*
  * If we leave drives set for synchronous transfers (especially
- * CDROMs), and reboot to MacOS, it gets confused, poor thing.
+ * CDROMs), and reboot to macOS, it gets confused, poor thing.
  * So, on reboot we reset the SCSI bus.
  */
 static int mesh_shutdown(struct macio_dev *mdev)
@@ -1971,7 +1971,7 @@ static int mesh_probe(struct macio_dev *mdev, const struct of_device_id *match)
  out_release_irq:
 	free_irq(ms->meshintr, ms);
  out_shutdown:
-	/* shutdown & reset bus in case of error or macos can be confused
+	/* shutdown & reset bus in case of error or macOS can be confused
 	 * at reboot if the bus was set to synchronous mode already
 	 */
 	mesh_shutdown(mdev);

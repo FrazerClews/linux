@@ -49,7 +49,7 @@ static int hfsplus_ioctl_bless(struct file *file, int __user *user_flags)
 	 */
 	vh->finder_info[1] = bvh->finder_info[1] = cpu_to_be32(cnid);
 
-	/* Per spec, the OS X system folder - same as finder_info[0] here */
+	/* Per spec, the macOS system folder - same as finder_info[0] here */
 	vh->finder_info[5] = bvh->finder_info[5] =
 		cpu_to_be32(parent_ino(dentry));
 

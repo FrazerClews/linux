@@ -1871,7 +1871,7 @@ static void radeon_reinitialize_M10(struct radeonfb_info *rinfo)
 	mdelay(5);
 
 	/* Setup some black magic bits in PLL_PWRMGT_CNTL. Hrm... we saved
-	 * 0xa1100007... and MacOS writes 0xa1000007 ..
+	 * 0xa1100007... and macOS writes 0xa1000007 ..
 	 */
 	OUTPLL(pllPLL_PWRMGT_CNTL, rinfo->save_regs[0]);
 
@@ -2026,7 +2026,7 @@ static void radeon_reinitialize_M9P(struct radeonfb_info *rinfo)
 	OUTREG(PAMAC2_DLY_CNTL, rinfo->save_regs[79]);
 
 	OUTREG(AGP_CNTL, rinfo->save_regs[16]);
-	OUTREG(HOST_PATH_CNTL, rinfo->save_regs[41]); /* MacOS sets that to 0 !!! */
+	OUTREG(HOST_PATH_CNTL, rinfo->save_regs[41]); /* macOS sets that to 0 !!! */
 	OUTREG(DISP_MISC_CNTL, rinfo->save_regs[9]);
 
 	tmp  = rinfo->save_regs[1]
@@ -2143,7 +2143,7 @@ static void radeon_reinitialize_M9P(struct radeonfb_info *rinfo)
 	OUTREG(TV_MASTER_CNTL, rinfo->save_regs[88]);
 	OUTREG(TV_DAC_CNTL, rinfo->save_regs[13] | 0x07000000);
 
-	/* Restore GPIOS. MacOS does some magic here with one of the GPIO bits,
+	/* Restore GPIOS. macOS does some magic here with one of the GPIO bits,
 	 * possibly related to the weird PLL related workarounds and to the
 	 * fact that CLK_PIN_CNTL is tweaked in ways I don't fully understand,
 	 * but we keep things the simple way here

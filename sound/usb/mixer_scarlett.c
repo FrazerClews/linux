@@ -23,7 +23,7 @@
  * Focusrite's implementation of it. Eventually quirks may be sufficient but
  * right now it's a major headache to work arount these things.
  *
- * NB. Neither the OSX nor the win driver provided by Focusrite performs
+ * NB. Neither the macOS nor the win driver provided by Focusrite performs
  * discovery, they seem to operate the same as this driver.
  */
 

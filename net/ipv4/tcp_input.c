@@ -5394,10 +5394,10 @@ static void tcp_urg(struct sock *sk, struct sk_buff *skb, const struct tcphdr *t
 }
 
 /* Accept RST for rcv_nxt - 1 after a FIN.
- * When tcp connections are abruptly terminated from Mac OSX (via ^C), a
+ * When tcp connections are abruptly terminated from macOS (via ^C), a
  * FIN is sent followed by a RST packet. The RST is sent with the same
  * sequence number as the FIN, and thus according to RFC 5961 a challenge
- * ACK should be sent. However, Mac OSX rate limits replies to challenge
+ * ACK should be sent. However, macOS rate limits replies to challenge
  * ACKs on the closed socket. In addition middleboxes can drop either the
  * challenge ACK or a subsequent RST.
  */

@@ -2725,7 +2725,7 @@ struct data_blob {
 	T2_QFS_INFO QueryDevice/AttributeInfo - OPTIONAL
  */
 
-/* xsymlink is a symlink format (used by MacOS) that can be used
+/* xsymlink is a symlink format (used by macOS) that can be used
    to save symlink info in a regular file when
    mounted to operating systems that do not
    support the cifs Unix extensions or EAs (for xattr

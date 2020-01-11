@@ -188,7 +188,7 @@ typedef unsigned int sigINT;
 #define OS_NEXTSTEP     0x00008000 /* NeXTSTEP/OPENSTEP/MACH		*/
 #define OS_BANYAN       0x00010000 /* Banyan Vines			*/
 #define OS_OLIVETTI_UNIX 0x00020000/* Olivetti Unix			*/
-#define OS_MAC_OS	0x00040000 /* Mac OS				*/
+#define OS_MAC_OS	0x00040000 /* macOS				*/
 #define OS_WINDOWS_95	0x00080000 /* Microsoft Windows '95		*/
 #define OS_NW4x		0x00100000 /* Novell Netware 4.x		*/
 #define OS_BSDI_UNIX	0x00200000 /* BSDi Unix BSD/OS 2.0 and up	*/

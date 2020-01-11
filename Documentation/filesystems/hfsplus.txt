@@ -13,7 +13,7 @@ Mount options
 When mounting an HFSPlus filesystem, the following options are accepted:
 
   creator=cccc, type=cccc
-	Specifies the creator/type values as shown by the MacOS finder
+	Specifies the creator/type values as shown by the macOS finder
 	used for creating new files.  Default values: '????'.
 
   uid=n, gid=n

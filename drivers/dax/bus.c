@@ -72,7 +72,7 @@ static ssize_t do_id_store(struct device_driver *drv, const char *buf,
 	ssize_t rc = count;
 	int fields;
 
-	fields = sscanf(buf, "dax%d.%d", &region_id, &id);
+	fields = sscanf(buf, "dax%u.%u", &region_id, &id);
 	if (fields != 2)
 		return -EINVAL;
 	sprintf(devname, "dax%d.%d", region_id, id);

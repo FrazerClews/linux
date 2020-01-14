@@ -153,7 +153,7 @@ static ssize_t omap_kp_enable_store(struct device *dev, struct device_attribute 
 	struct omap_kp *omap_kp = dev_get_drvdata(dev);
 	int state;
 
-	if (sscanf(buf, "%u", &state) != 1)
+	if (sscanf(buf, "%d", &state) != 1)
 		return -EINVAL;
 
 	if ((state != 1) && (state != 0))

@@ -332,7 +332,7 @@ static ssize_t iio_debugfs_write_reg(struct file *file,
 
 	buf[count] = 0;
 
-	ret = sscanf(buf, "%i %i", &reg, &val);
+	ret = sscanf(buf, "%u %u", &reg, &val);
 
 	switch (ret) {
 	case 1:

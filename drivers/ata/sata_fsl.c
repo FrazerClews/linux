@@ -330,7 +330,7 @@ static ssize_t fsl_sata_intr_coalescing_store(struct device *dev,
 {
 	unsigned int coalescing_count,	coalescing_ticks;
 
-	if (sscanf(buf, "%d%d",
+	if (sscanf(buf, "%u%u",
 				&coalescing_count,
 				&coalescing_ticks) != 2) {
 		printk(KERN_ERR "fsl-sata: wrong parameter format.\n");
@@ -371,7 +371,7 @@ static ssize_t fsl_sata_rx_watermark_store(struct device *dev,
 	void __iomem *csr_base = host_priv->csr_base;
 	u32 temp;
 
-	if (sscanf(buf, "%d", &rx_watermark) != 1) {
+	if (sscanf(buf, "%u", &rx_watermark) != 1) {
 		printk(KERN_ERR "fsl-sata: wrong parameter format.\n");
 		return -EINVAL;
 	}

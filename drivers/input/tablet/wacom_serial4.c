@@ -192,7 +192,7 @@ static void wacom_handle_model_response(struct wacom *wacom)
 
 	p = strrchr(wacom->data, 'V');
 	if (p)
-		r = sscanf(p + 1, "%u.%u", &major_v, &minor_v);
+		r = sscanf(p + 1, "%d.%d", &major_v, &minor_v);
 	if (r != 2)
 		major_v = minor_v = 0;
 
@@ -265,7 +265,7 @@ static void wacom_handle_configuration_response(struct wacom *wacom)
 	int r, skip;
 
 	dev_dbg(&wacom->dev->dev, "Configuration string: %s\n", wacom->data);
-	r = sscanf(wacom->data, "~R%x,%u,%u,%u,%u", &skip, &skip, &skip,
+	r = sscanf(wacom->data, "~R%x,%d,%d,%u,%u", &skip, &skip, &skip,
 		   &wacom->res_x, &wacom->res_y);
 	if (r != 5)
 		dev_warn(&wacom->dev->dev, "could not get resolution\n");

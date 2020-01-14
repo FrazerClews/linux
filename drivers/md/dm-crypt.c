@@ -1985,7 +1985,7 @@ static int get_key_size(char **key_string)
 	if (!colon)
 		return -EINVAL;
 
-	if (sscanf(*key_string + 1, "%u%c", &ret, &dummy) != 2 || dummy != ':')
+	if (sscanf(*key_string + 1, "%d%c", &ret, &dummy) != 2 || dummy != ':')
 		return -EINVAL;
 
 	*key_string = colon;

@@ -104,7 +104,7 @@ int radeon_vce_init(struct radeon_device *rdev)
 		return -EINVAL;
 
 	c += strlen(fw_version);
-	if (sscanf(c, "%2hhd.%2hhd.%2hhd]", &start, &mid, &end) != 3)
+	if (sscanf(c, "%2hhu.%2hhu.%2hhu]", &start, &mid, &end) != 3)
 		return -EINVAL;
 
 	/* search for feedback version */

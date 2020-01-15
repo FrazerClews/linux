@@ -927,7 +927,7 @@ static int palinfo_add_proc(unsigned int cpu)
 	struct proc_dir_entry *cpu_dir;
 	int j;
 	char cpustr[3+4+1];	/* cpu numbers are up to 4095 on itanic */
-	sprintf(cpustr, "cpu%d", cpu);
+	sprintf(cpustr, "cpu%u", cpu);
 
 	cpu_dir = proc_mkdir(cpustr, palinfo_dir);
 	if (!cpu_dir)
@@ -947,7 +947,7 @@ static int palinfo_del_proc(unsigned int hcpu)
 {
 	char cpustr[3+4+1];	/* cpu numbers are up to 4095 on itanic */
 
-	sprintf(cpustr, "cpu%d", hcpu);
+	sprintf(cpustr, "cpu%u", hcpu);
 	remove_proc_subtree(cpustr, palinfo_dir);
 	return 0;
 }

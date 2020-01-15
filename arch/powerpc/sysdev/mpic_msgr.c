@@ -114,7 +114,7 @@ static unsigned int mpic_msgr_number_of_blocks(void)
 		char buf[32];
 
 		for (;;) {
-			snprintf(buf, sizeof(buf), "mpic-msgr-block%d", count);
+			snprintf(buf, sizeof(buf), "mpic-msgr-block%u", count);
 			if (!of_find_property(aliases, buf, NULL))
 				break;
 
@@ -144,7 +144,7 @@ static int mpic_msgr_block_number(struct device_node *node)
 	for (index = 0; index < number_of_blocks; ++index) {
 		struct property *prop;
 
-		snprintf(buf, sizeof(buf), "mpic-msgr-block%d", index);
+		snprintf(buf, sizeof(buf), "mpic-msgr-block%u", index);
 		prop = of_find_property(aliases, buf, NULL);
 		if (node == of_find_node_by_path(prop->value))
 			break;

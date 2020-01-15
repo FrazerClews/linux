@@ -181,7 +181,7 @@ static void cache_shared_cpu_map_setup(unsigned int cpu,
 static ssize_t show_coherency_line_size(struct cache_info *this_leaf,
 					char *buf)
 {
-	return sprintf(buf, "%u\n", 1 << this_leaf->cci.pcci_line_size);
+	return sprintf(buf, "%d\n", 1 << this_leaf->cci.pcci_line_size);
 }
 
 static ssize_t show_ways_of_associativity(struct cache_info *this_leaf,
@@ -229,7 +229,7 @@ static ssize_t show_type(struct cache_info *this_leaf, char *buf)
 
 static ssize_t show_level(struct cache_info *this_leaf, char *buf)
 {
-	return sprintf(buf, "%u\n", this_leaf->level);
+	return sprintf(buf, "%d\n", this_leaf->level);
 }
 
 struct cache_attr {

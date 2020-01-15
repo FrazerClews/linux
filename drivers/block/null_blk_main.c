@@ -1767,7 +1767,7 @@ static int null_add_dev(struct nullb_device *dev)
 
 	null_config_discard(nullb);
 
-	sprintf(nullb->disk_name, "nullb%d", nullb->index);
+	sprintf(nullb->disk_name, "nullb%u", nullb->index);
 
 	rv = null_gendisk_register(nullb);
 	if (rv)

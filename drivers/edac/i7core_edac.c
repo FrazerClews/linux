@@ -618,7 +618,7 @@ static int get_dimm_config(struct mem_ctl_info *mci)
 			}
 
 			snprintf(dimm->label, sizeof(dimm->label),
-				 "CPU#%uChannel#%u_DIMM#%u",
+				 "CPU#%uChannel#%d_DIMM#%d",
 				 pvt->i7core_dev->socket, i, j);
 			dimm->grain = 8;
 			dimm->edac_mode = mode;

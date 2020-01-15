@@ -134,7 +134,7 @@ static int __init nfhd_init_one(int id, u32 blocks, u32 bsize)
 	dev->disk->first_minor = dev_id * 16;
 	dev->disk->fops = &nfhd_ops;
 	dev->disk->private_data = dev;
-	sprintf(dev->disk->disk_name, "nfhd%u", dev_id);
+	sprintf(dev->disk->disk_name, "nfhd%d", dev_id);
 	set_capacity(dev->disk, (sector_t)blocks * (bsize / 512));
 	dev->disk->queue = dev->queue;
 

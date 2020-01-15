@@ -104,7 +104,7 @@ void sb1250_clockevent_init(void)
 	/* Only have 4 general purpose timers, and we use last one as hpt */
 	BUG_ON(cpu > 2);
 
-	sprintf(name, "sb1250-counter-%d", cpu);
+	sprintf(name, "sb1250-counter-%u", cpu);
 	cd->name		= name;
 	cd->features		= CLOCK_EVT_FEAT_PERIODIC |
 				  CLOCK_EVT_FEAT_ONESHOT;

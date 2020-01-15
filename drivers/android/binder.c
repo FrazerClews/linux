@@ -5241,7 +5241,7 @@ static int binder_open(struct inode *nodp, struct file *filp)
 	if (binder_debugfs_dir_entry_proc) {
 		char strbuf[11];
 
-		snprintf(strbuf, sizeof(strbuf), "%u", proc->pid);
+		snprintf(strbuf, sizeof(strbuf), "%d", proc->pid);
 		/*
 		 * proc debug entries are shared between contexts, so
 		 * this will fail if the process tries to open the driver
@@ -5259,7 +5259,7 @@ static int binder_open(struct inode *nodp, struct file *filp)
 		char strbuf[11];
 		struct dentry *binderfs_entry;
 
-		snprintf(strbuf, sizeof(strbuf), "%u", proc->pid);
+		snprintf(strbuf, sizeof(strbuf), "%d", proc->pid);
 		/*
 		 * Similar to debugfs, the process specific log file is shared
 		 * between contexts. If the file has already been created for a

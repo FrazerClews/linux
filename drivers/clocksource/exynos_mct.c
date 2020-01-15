@@ -450,7 +450,7 @@ static int exynos4_mct_starting_cpu(unsigned int cpu)
 	struct clock_event_device *evt = &mevt->evt;
 
 	mevt->base = EXYNOS4_MCT_L_BASE(cpu);
-	snprintf(mevt->name, sizeof(mevt->name), "mct_tick%d", cpu);
+	snprintf(mevt->name, sizeof(mevt->name), "mct_tick%u", cpu);
 
 	evt->name = mevt->name;
 	evt->cpumask = cpumask_of(cpu);

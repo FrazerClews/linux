@@ -973,7 +973,7 @@ static int read_per_ring_refs(struct xen_blkif_ring *ring, const char *dir)
 	for (i = 0; i < nr_grefs; i++) {
 		char ring_ref_name[RINGREF_NAME_LEN];
 
-		snprintf(ring_ref_name, RINGREF_NAME_LEN, "ring-ref%u", i);
+		snprintf(ring_ref_name, RINGREF_NAME_LEN, "ring-ref%d", i);
 		err = xenbus_scanf(XBT_NIL, dir, ring_ref_name,
 				   "%u", &ring_ref[i]);
 
@@ -1129,7 +1129,7 @@ static int connect_ring(struct backend_info *be)
 
 		for (i = 0; i < blkif->nr_rings; i++) {
 			memset(xspath, 0, xspathsize);
-			snprintf(xspath, xspathsize, "%s/queue-%u", dev->otherend, i);
+			snprintf(xspath, xspathsize, "%s/queue-%d", dev->otherend, i);
 			err = read_per_ring_refs(&blkif->rings[i], xspath);
 			if (err) {
 				kfree(xspath);

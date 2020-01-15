@@ -168,7 +168,7 @@ static void __init ambapp_path_component(struct device_node *dp, char *tmp_buf)
 		return;
 	device = prop->value;
 
-	sprintf(tmp_buf, "%s:%d:%d@%x,%x",
+	sprintf(tmp_buf, "%s:%u:%u@%x,%x",
 		name, *vendor, *device,
 		*intr, reg0);
 }

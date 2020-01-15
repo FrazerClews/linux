@@ -192,7 +192,7 @@ srm_env_init(void)
 	 */
 	for (var_num = 0; var_num <= 255; var_num++) {
 		char name[4];
-		sprintf(name, "%ld", var_num);
+		sprintf(name, "%lu", var_num);
 		if (!proc_create_data(name, 0644, numbered_dir,
 			     &srm_env_proc_fops, (void *)var_num))
 			goto cleanup;

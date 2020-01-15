@@ -95,7 +95,7 @@ void hub_rt_clock_event_init(void)
 	struct clock_event_device *cd = &per_cpu(hub_rt_clockevent, cpu);
 	unsigned char *name = per_cpu(hub_rt_name, cpu);
 
-	sprintf(name, "hub-rt %d", cpu);
+	sprintf(name, "hub-rt %u", cpu);
 	cd->name		= name;
 	cd->features		= CLOCK_EVT_FEAT_ONESHOT;
 	clockevent_set_clock(cd, CYCLES_PER_SEC);

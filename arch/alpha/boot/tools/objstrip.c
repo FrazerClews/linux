@@ -231,7 +231,7 @@ main (int argc, char *argv[])
     }
 
     if (verbose) {
-	fprintf(stderr, "%s: copying %lu byte from %s\n",
+	fprintf(stderr, "%s: copying %zu byte from %s\n",
 		prog_name, (unsigned long) fil_size, inname);
     }
 
@@ -263,7 +263,7 @@ main (int argc, char *argv[])
     tocopy = mem_size - fil_size;
     if (tocopy > 0) {
 	fprintf(stderr,
-		"%s: zero-filling bss and aligning to %lu with %lu bytes\n",
+		"%s: zero-filling bss and aligning to %zu with %lu bytes\n",
 		prog_name, pad, (unsigned long) tocopy);
 
 	memset(buf, 0x00, sizeof(buf));

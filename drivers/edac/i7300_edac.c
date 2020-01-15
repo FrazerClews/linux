@@ -443,7 +443,7 @@ static void i7300_process_fbd_error(struct mem_ctl_info *mci)
 				FERR_FAT_FBD, error_reg);
 
 		snprintf(pvt->tmp_prt_buffer, PAGE_SIZE,
-			 "Bank=%d RAS=%d CAS=%d Err=0x%lx (%s))",
+			 "Bank=%u RAS=%u CAS=%u Err=0x%lx (%s))",
 			 bank, ras, cas, errors, specific);
 
 		edac_mc_handle_error(HW_EVENT_ERR_FATAL, mci, 1, 0, 0, 0,
@@ -490,7 +490,7 @@ static void i7300_process_fbd_error(struct mem_ctl_info *mci)
 
 		/* Form out message */
 		snprintf(pvt->tmp_prt_buffer, PAGE_SIZE,
-			 "DRAM-Bank=%d RAS=%d CAS=%d, Err=0x%lx (%s))",
+			 "DRAM-Bank=%u RAS=%u CAS=%u, Err=0x%lx (%s))",
 			 bank, ras, cas, errors, specific);
 
 		edac_mc_handle_error(HW_EVENT_ERR_CORRECTED, mci, 1, 0, 0,

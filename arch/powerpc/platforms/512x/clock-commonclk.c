@@ -820,7 +820,7 @@ static void mpc512x_clk_setup_clock_tree(struct device_node *np, int busfreq)
 	/* for PSCs there is a "registers" gate and a bitrate MCLK subtree */
 	for (mclk_idx = 0; mclk_idx < soc_max_pscnum(); mclk_idx++) {
 		char name[12];
-		snprintf(name, sizeof(name), "psc%d", mclk_idx);
+		snprintf(name, sizeof(name), "psc%zu", mclk_idx);
 		clks[MPC512x_CLK_PSC0 + mclk_idx] = mpc512x_clk_gated(
 				name, "ips", &clkregs->sccr1, 27 - mclk_idx);
 		mpc512x_clk_setup_mclk(&mclk_psc_data[mclk_idx], mclk_idx);

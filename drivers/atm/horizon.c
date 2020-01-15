@@ -2623,7 +2623,7 @@ static int hrz_proc_read (struct atm_dev * atm_dev, loff_t * pos, char * page) {
   
   if (!left--)
     return sprintf (page,
-		    "free cell buffers: TX %hu, RX %hu+%hu.\n",
+		    "free cell buffers: TX %hu, RX %hu+%d.\n",
 		    rd_regw (dev, TX_FREE_BUFFER_COUNT_OFF),
 		    rd_regw (dev, RX_FREE_BUFFER_COUNT_OFF),
 		    dev->noof_spare_buffers);

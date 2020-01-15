@@ -51,7 +51,7 @@ int main(int argc, char *argv[])
 
 	printf(".section \".rodata..compressed\",\"a\",@progbits\n");
 	printf(".globl z_input_len\n");
-	printf("z_input_len = %lu\n", ilen);
+	printf("z_input_len = %ld\n", ilen);
 	printf(".globl z_output_len\n");
 	printf("z_output_len = %lu\n", (unsigned long)olen);
 

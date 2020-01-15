@@ -235,7 +235,7 @@ static int bsr_add_node(struct device_node *bn)
 		}
 
 		cur->bsr_num = bsr_types[cur->bsr_type];
-		snprintf(cur->bsr_name, 32, "bsr%d_%d",
+		snprintf(cur->bsr_name, 32, "bsr%u_%u",
 			 cur->bsr_bytes, cur->bsr_num);
 
 		cdev_init(&cur->bsr_cdev, &bsr_fops);

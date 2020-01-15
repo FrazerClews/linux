@@ -75,7 +75,7 @@ static ssize_t do_id_store(struct device_driver *drv, const char *buf,
 	fields = sscanf(buf, "dax%d.%d", &region_id, &id);
 	if (fields != 2)
 		return -EINVAL;
-	sprintf(devname, "dax%d.%d", region_id, id);
+	sprintf(devname, "dax%u.%u", region_id, id);
 	if (!sysfs_streq(buf, devname))
 		return -EINVAL;
 

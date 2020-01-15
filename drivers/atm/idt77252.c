@@ -2682,7 +2682,7 @@ idt77252_proc_read(struct atm_dev *dev, loff_t * pos, char *page)
 			continue;
 
 		p = page;
-		p += sprintf(p, "  %4u: %u.%u: ", i, vcc->vpi, vcc->vci);
+		p += sprintf(p, "  %4d: %u.%u: ", i, vcc->vpi, vcc->vci);
 		tct = (unsigned long) (card->tct_base + i * SAR_SRAM_TCT_SIZE);
 
 		for (i = 0; i < 8; i++)

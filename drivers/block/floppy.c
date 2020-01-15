@@ -3951,7 +3951,7 @@ static void __init config_types(void)
 		} else {
 			params = &default_drive_params[0].params;
 			snprintf(temparea, sizeof(temparea),
-				 "unknown type %d (usb?)", type);
+				 "unknown type %u (usb?)", type);
 			name = temparea;
 		}
 		if (name) {

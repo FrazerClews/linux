@@ -426,7 +426,7 @@ static int nmi_create_files(struct dentry *root)
 		if (!avail_to_resrv_perfctr_nmi_bit(op_x86_virt_to_phys(i)))
 			continue;
 
-		snprintf(buf,  sizeof(buf), "%d", i);
+		snprintf(buf,  sizeof(buf), "%u", i);
 		dir = oprofilefs_mkdir(root, buf);
 		oprofilefs_create_ulong(dir, "enabled", &counter_config[i].enabled);
 		oprofilefs_create_ulong(dir, "event", &counter_config[i].event);

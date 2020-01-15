@@ -863,7 +863,7 @@ static void i5100_init_csrows(struct mem_ctl_info *mci)
 				DEV_X4 : DEV_X8;
 		dimm->mtype = MEM_RDDR2;
 		dimm->edac_mode = EDAC_SECDED;
-		snprintf(dimm->label, sizeof(dimm->label), "DIMM%u",
+		snprintf(dimm->label, sizeof(dimm->label), "DIMM%d",
 			 i5100_rank_to_slot(mci, chan, rank));
 
 		edac_dbg(2, "dimm channel %d, rank %d, size %ld\n",

@@ -806,7 +806,7 @@ static int ccp5_init(struct ccp_device *ccp)
 			continue;
 
 		/* Allocate a dma pool for this queue */
-		snprintf(dma_pool_name, sizeof(dma_pool_name), "%s_q%d",
+		snprintf(dma_pool_name, sizeof(dma_pool_name), "%s_q%u",
 			 ccp->name, i);
 		dma_pool = dma_pool_create(dma_pool_name, dev,
 					   CCP_DMAPOOL_MAX_SIZE,

@@ -990,7 +990,7 @@ static ssize_t show_turbo_pct(struct kobject *kobj,
 
 	mutex_unlock(&intel_pstate_driver_lock);
 
-	return sprintf(buf, "%u\n", turbo_pct);
+	return sprintf(buf, "%d\n", turbo_pct);
 }
 
 static ssize_t show_num_pstates(struct kobject *kobj,
@@ -1011,7 +1011,7 @@ static ssize_t show_num_pstates(struct kobject *kobj,
 
 	mutex_unlock(&intel_pstate_driver_lock);
 
-	return sprintf(buf, "%u\n", total);
+	return sprintf(buf, "%d\n", total);
 }
 
 static ssize_t show_no_turbo(struct kobject *kobj,

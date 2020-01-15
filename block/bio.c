@@ -101,7 +101,7 @@ static struct kmem_cache *bio_find_or_create_slab(unsigned int extra_size)
 
 	bslab = &bio_slabs[entry];
 
-	snprintf(bslab->name, sizeof(bslab->name), "bio-%d", entry);
+	snprintf(bslab->name, sizeof(bslab->name), "bio-%u", entry);
 	slab = kmem_cache_create(bslab->name, sz, ARCH_KMALLOC_MINALIGN,
 				 SLAB_HWCACHE_ALIGN, NULL);
 	if (!slab)

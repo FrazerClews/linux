@@ -1026,7 +1026,7 @@ viobus_cmo_pool_rd_attr(excess, free);
 
 static ssize_t cmo_high_show(struct bus_type *bt, char *buf)
 {
-	return sprintf(buf, "%lu\n", vio_cmo.high);
+	return sprintf(buf, "%zu\n", vio_cmo.high);
 }
 
 static ssize_t cmo_high_store(struct bus_type *bt, const char *buf,

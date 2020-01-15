@@ -335,7 +335,7 @@ int skx_get_dimm_info(u32 mtr, u32 amap, struct dimm_info *dimm,
 	dimm->dtype = get_width(mtr);
 	dimm->mtype = MEM_DDR4;
 	dimm->edac_mode = EDAC_SECDED; /* likely better than this */
-	snprintf(dimm->label, sizeof(dimm->label), "CPU_SrcID#%u_MC#%u_Chan#%u_DIMM#%u",
+	snprintf(dimm->label, sizeof(dimm->label), "CPU_SrcID#%u_MC#%u_Chan#%d_DIMM#%d",
 		 imc->src_id, imc->lmc, chan, dimmno);
 
 	return 1;
@@ -383,7 +383,7 @@ unknown_size:
 	edac_dbg(0, "mc#%d: channel %d, dimm %d, %llu MiB (%u pages)\n",
 		 imc->mc, chan, dimmno, size >> 20, dimm->nr_pages);
 
-	snprintf(dimm->label, sizeof(dimm->label), "CPU_SrcID#%u_MC#%u_Chan#%u_DIMM#%u",
+	snprintf(dimm->label, sizeof(dimm->label), "CPU_SrcID#%u_MC#%u_Chan#%d_DIMM#%d",
 		 imc->src_id, imc->lmc, chan, dimmno);
 
 	return (size == 0 || size == ~0ull) ? 0 : 1;

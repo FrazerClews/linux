@@ -251,7 +251,7 @@ int hidma_mgmt_init_sys(struct hidma_mgmt_dev *mdev)
 	for (i = 0; i < mdev->dma_channels; i++) {
 		char name[20];
 
-		snprintf(name, sizeof(name), "chan%d", i);
+		snprintf(name, sizeof(name), "chan%u", i);
 		mdev->chroots[i] = kobject_create_and_add(name, chanops);
 		if (!mdev->chroots[i])
 			return -ENOMEM;

@@ -116,7 +116,7 @@ int main(int argc, char ** argv)
     nread = read(fd, &bootloader_image, sizeof(bootblock));
     if(nread != sizeof(bootblock)) {
 	perror("lxboot read");
-	fprintf(stderr, "expected %zd, got %d\n", sizeof(bootblock), nread);
+	fprintf(stderr, "expected %zu, got %d\n", sizeof(bootblock), nread);
 	exit(0);
     }
 
@@ -124,7 +124,7 @@ int main(int argc, char ** argv)
     nread = read(dev, &bootblock_from_disk, sizeof(bootblock));
     if(nread != sizeof(bootblock)) {
 	perror("bootblock read");
-	fprintf(stderr, "expected %zd, got %d\n", sizeof(bootblock), nread);
+	fprintf(stderr, "expected %zu, got %d\n", sizeof(bootblock), nread);
 	exit(0);
     }
 

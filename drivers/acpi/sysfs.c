@@ -387,7 +387,7 @@ static int acpi_table_attr_init(struct kobject *tables_obj,
 	if (table_attr->instance > 1 || (table_attr->instance == 1 &&
 					 !acpi_get_table
 					 (table_header->signature, 2, &header))) {
-		snprintf(instance_str, sizeof(instance_str), "%u",
+		snprintf(instance_str, sizeof(instance_str), "%d",
 			 table_attr->instance);
 		strcat(table_attr->filename, instance_str);
 	}

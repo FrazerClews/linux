@@ -1490,7 +1490,7 @@ static int carm_init_one (struct pci_dev *pdev, const struct pci_device_id *ent)
 		host->flags |= FL_DYN_MAJOR;
 
 	host->id = carm_host_id;
-	sprintf(host->name, DRV_NAME "%d", carm_host_id);
+	sprintf(host->name, DRV_NAME "%u", carm_host_id);
 
 	rc = register_blkdev(host->major, host->name);
 	if (rc < 0)

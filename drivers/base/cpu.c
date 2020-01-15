@@ -260,7 +260,7 @@ static ssize_t print_cpus_offline(struct device *dev,
 		if (nr_cpu_ids == total_cpus-1)
 			n += snprintf(&buf[n], len - n, "%u", nr_cpu_ids);
 		else
-			n += snprintf(&buf[n], len - n, "%u-%d",
+			n += snprintf(&buf[n], len - n, "%u-%u",
 						      nr_cpu_ids, total_cpus-1);
 	}
 

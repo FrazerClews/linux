@@ -407,7 +407,7 @@ static int ppc_rtas_sensors_show(struct seq_file *m, void *v)
 		const char *loc;
 		int llen, offs;
 
-		sprintf (rstr, SENSOR_PREFIX"%04d", p->token);
+		sprintf (rstr, SENSOR_PREFIX"%04u", p->token);
 		loc = of_get_property(rtas_node, rstr, &llen);
 
 		/* A sensor may have multiple instances */

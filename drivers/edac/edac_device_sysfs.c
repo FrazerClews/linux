@@ -32,7 +32,7 @@
 static ssize_t edac_device_ctl_log_ue_show(struct edac_device_ctl_info
 					*ctl_info, char *data)
 {
-	return sprintf(data, "%u\n", ctl_info->log_ue);
+	return sprintf(data, "%d\n", ctl_info->log_ue);
 }
 
 static ssize_t edac_device_ctl_log_ue_store(struct edac_device_ctl_info
@@ -49,7 +49,7 @@ static ssize_t edac_device_ctl_log_ue_store(struct edac_device_ctl_info
 static ssize_t edac_device_ctl_log_ce_show(struct edac_device_ctl_info
 					*ctl_info, char *data)
 {
-	return sprintf(data, "%u\n", ctl_info->log_ce);
+	return sprintf(data, "%d\n", ctl_info->log_ce);
 }
 
 static ssize_t edac_device_ctl_log_ce_store(struct edac_device_ctl_info
@@ -66,7 +66,7 @@ static ssize_t edac_device_ctl_log_ce_store(struct edac_device_ctl_info
 static ssize_t edac_device_ctl_panic_on_ue_show(struct edac_device_ctl_info
 						*ctl_info, char *data)
 {
-	return sprintf(data, "%u\n", ctl_info->panic_on_ue);
+	return sprintf(data, "%d\n", ctl_info->panic_on_ue);
 }
 
 static ssize_t edac_device_ctl_panic_on_ue_store(struct edac_device_ctl_info

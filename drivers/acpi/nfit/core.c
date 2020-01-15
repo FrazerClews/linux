@@ -1261,7 +1261,7 @@ static ssize_t hw_error_scrub_show(struct device *dev,
 	struct nvdimm_bus_descriptor *nd_desc = to_nd_desc(nvdimm_bus);
 	struct acpi_nfit_desc *acpi_desc = to_acpi_desc(nd_desc);
 
-	return sprintf(buf, "%d\n", acpi_desc->scrub_mode);
+	return sprintf(buf, "%u\n", acpi_desc->scrub_mode);
 }
 
 /*
@@ -1330,7 +1330,7 @@ static ssize_t scrub_show(struct device *dev,
 	mutex_lock(&acpi_desc->init_mutex);
 	busy = test_bit(ARS_BUSY, &acpi_desc->scrub_flags)
 		&& !test_bit(ARS_CANCEL, &acpi_desc->scrub_flags);
-	rc = sprintf(buf, "%d%s", acpi_desc->scrub_count, busy ? "+\n" : "\n");
+	rc = sprintf(buf, "%u%s", acpi_desc->scrub_count, busy ? "+\n" : "\n");
 	/* Allow an admin to poll the busy state at a higher rate */
 	if (busy && capable(CAP_SYS_RAWIO) && !test_and_set_bit(ARS_POLL,
 				&acpi_desc->scrub_flags)) {

@@ -158,7 +158,7 @@ struct edac_device_ctl_info *edac_device_alloc_ctl_info(
 			blk = &blk_p[block];
 			blk->instance = inst;
 			snprintf(blk->name, sizeof(blk->name),
-				 "%s%d", edac_block_name, block+offset_value);
+				 "%s%u", edac_block_name, block+offset_value);
 
 			edac_dbg(4, "instance=%d inst_p=%p block=#%d block_p=%p name='%s'\n",
 				 instance, inst, block, blk, blk->name);

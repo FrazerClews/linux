@@ -1638,7 +1638,7 @@ static ssize_t params_show(struct device *dev,
 	struct smi_info *smi_info = dev_get_drvdata(dev);
 
 	return snprintf(buf, 200,
-			"%s,%s,0x%lx,rsp=%d,rsi=%d,rsh=%d,irq=%d,ipmb=%d\n",
+			"%s,%s,0x%lx,rsp=%u,rsi=%u,rsh=%u,irq=%d,ipmb=%d\n",
 			si_to_str[smi_info->io.si_type],
 			addr_space_to_str[smi_info->io.addr_space],
 			smi_info->io.addr_data,

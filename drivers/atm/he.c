@@ -2776,7 +2776,7 @@ he_proc_read(struct atm_dev *dev, loff_t *pos, char *page)
 						he_dev->cs_stper[i].inuse);
 
 	if (!left--)
-		return sprintf(page, "total bw (cbr): %d  (limit %d)\n",
+		return sprintf(page, "total bw (cbr): %u  (limit %d)\n",
 			he_dev->total_bw, he_dev->atm_dev->link_rate * 10 / 9);
 
 	return 0;

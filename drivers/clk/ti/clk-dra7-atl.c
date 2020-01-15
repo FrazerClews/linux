@@ -267,7 +267,7 @@ static int of_dra7_atl_clk_probe(struct platform_device *pdev)
 		cdesc->id = i;
 
 		/* Get configuration for the ATL instances */
-		snprintf(prop, sizeof(prop), "atl%u", i);
+		snprintf(prop, sizeof(prop), "atl%d", i);
 		cfg_node = of_get_child_by_name(node, prop);
 		if (cfg_node) {
 			ret = of_property_read_u32(cfg_node, "bws",

@@ -75,7 +75,7 @@ int sysv68_partition(struct parsed_partitions *state)
 		return -1;
 
 	slices -= 1; /* last slice is the whole disk */
-	snprintf(tmp, sizeof(tmp), "sysV68: %s(s%u)", state->name, slices);
+	snprintf(tmp, sizeof(tmp), "sysV68: %s(s%d)", state->name, slices);
 	strlcat(state->pp_buf, tmp, PAGE_SIZE);
 	slice = (struct slice *)data;
 	for (i = 0; i < slices; i++, slice++) {
@@ -85,7 +85,7 @@ int sysv68_partition(struct parsed_partitions *state)
 			put_partition(state, slot,
 				be32_to_cpu(slice->blkoff),
 				be32_to_cpu(slice->nblocks));
-			snprintf(tmp, sizeof(tmp), "(s%u)", i);
+			snprintf(tmp, sizeof(tmp), "(s%d)", i);
 			strlcat(state->pp_buf, tmp, PAGE_SIZE);
 		}
 		slot++;

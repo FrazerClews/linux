@@ -1,0 +1,13 @@
+stages:
+        - build
+
+fedora-latest:
+        stage: build
+        image: fedora:latest
+        script:
+                - sudo dnf install -y cppcheck
+                - cppcheck ../linux --enable=all -q -f --std=c89 --output-file=reportCpp.log -j8 --addon=addons/cert --addon=addons/misc --addon=addons/y2038
+        artifacts:
+                when: always
+                paths:
+                        - reportCpp.log

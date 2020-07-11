@@ -66,7 +66,7 @@ sourcedir=${1-/usr/src/linux}
 patchdir=${2-.}
 stopvers=${3-default}
 
-if [ "$1" = -h -o "$1" = --help -o ! -r "$sourcedir/Makefile" ]; then
+if [ "$1" = -h ] || [ "$1" = --help ] || [ ! -r "$sourcedir/Makefile" ]; then
 cat << USAGE
 usage: $PNAME [-h] [ sourcedir [ patchdir [ stopversion ] [ -acxx ] ] ]
   source directory defaults to /usr/src/linux,
@@ -194,7 +194,7 @@ grep -E "^(VERSION|PATCHLEVEL|SUBLEVEL|EXTRAVERSION)" $sourcedir/Makefile > $TMP
 tr -d [:blank:] < $TMPFILE > $TMPFILE.1
 . $TMPFILE.1
 rm -f $TMPFILE*
-if [ -z "$VERSION" -o -z "$PATCHLEVEL" -o -z "$SUBLEVEL" ]
+if [ -z "$VERSION" ] || [ -z "$PATCHLEVEL" ] || [ -z "$SUBLEVEL" ]
 then
     echo "unable to determine current kernel version" >&2
     exit 1

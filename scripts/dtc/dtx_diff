@@ -134,7 +134,7 @@ compile_to_dts() {
 
 		dtx_arch=`echo "/${dtx}" | sed -e 's|.*/arch/||' -e 's|/.*||'`
 
-		if [ "${dtx_arch}" != ""  -a "${dtx_arch}" != "${ARCH}" ] ; then
+		if [ "${dtx_arch}" != "" ] && [ "${dtx_arch}" != "${ARCH}" ] ; then
 			hint_given=1
 			echo ""                                              >&2
 			echo "  architecture ${dtx_arch} is in file path,"   >&2

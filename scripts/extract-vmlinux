@@ -38,7 +38,7 @@ try_decompress()
 # Check invocation:
 me=${0##*/}
 img=$1
-if	[ $# -ne 1 -o ! -s "$img" ]
+if	[ $# -ne 1 ] || [ ! -s "$img" ]
 then
 	echo "Usage: $me <kernel-image>" >&2
 	exit 2

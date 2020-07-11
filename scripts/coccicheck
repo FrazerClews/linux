@@ -24,7 +24,7 @@ $SPATCH --help | grep "\-\-jobs" > /dev/null && USE_JOBS="yes"
 # The verbosity may be set by the environmental parameter V=
 # as for example with 'make V=1 coccicheck'
 
-if [ -n "$V" -a "$V" != "0" ]; then
+if [ -n "$V" ] && [ "$V" != "0" ]; then
 	VERBOSE="$V"
 else
 	VERBOSE=0
@@ -58,7 +58,7 @@ fi
 COCCIINCLUDE=${LINUXINCLUDE//-I/-I }
 COCCIINCLUDE=${COCCIINCLUDE// -include/ --include}
 
-if [ "$C" = "1" -o "$C" = "2" ]; then
+if [ "$C" = "1" ] || [ "$C" = "2" ]; then
     ONLINE=1
 
     # Take only the last argument, which is the C file to test
@@ -111,7 +111,7 @@ if [ "$MODE" = "chain" ] ; then
 	echo 'You have selected the "chain" mode.'
 	echo 'All available modes will be tried (in that order): patch, report, context, org'
     fi
-elif [ "$MODE" = "report" -o "$MODE" = "org" ] ; then
+elif [ "$MODE" = "report" ] || [ "$MODE" = "org" ] ; then
     FLAGS="--no-show-diff $FLAGS"
 fi
 
@@ -189,7 +189,7 @@ coccinelle () {
 #
 #    $SPATCH -D $MODE $FLAGS -parse_cocci $COCCI $OPT > /dev/null
 
-    if [ $VERBOSE -ne 0 -a $ONLINE -eq 0 ] ; then
+    if [ $VERBOSE -ne 0 ] && [ $ONLINE -eq 0 ] ; then
 
 	FILE=${COCCI#$srctree/}
 
@@ -244,7 +244,7 @@ coccinelle () {
 
 }
 
-if [ "$DEBUG_FILE" != "/dev/null" -a "$DEBUG_FILE" != "" ]; then
+if [ "$DEBUG_FILE" != "/dev/null" ] && [ "$DEBUG_FILE" != "" ]; then
 	if [ -f $DEBUG_FILE ]; then
 		echo "Debug file $DEBUG_FILE exists, bailing"
 		exit

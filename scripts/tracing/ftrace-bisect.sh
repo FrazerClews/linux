@@ -99,7 +99,7 @@ fi
 if [ -f $test ]; then
 	echo -n "$test exists, delete it? [y/N]"
 	read a
-	if [ "$a" != "y" -a "$a" != "Y" ]; then
+	if [ "$a" != "y" ] && [ "$a" != "Y" ]; then
 		exit 1
 	fi
 fi
@@ -107,7 +107,7 @@ fi
 if [ -f $nontest ]; then
 	echo -n "$nontest exists, delete it? [y/N]"
 	read a
-	if [ "$a" != "y" -a "$a" != "Y" ]; then
+	if [ "$a" != "y" ] && [ "$a" != "Y" ]; then
 		exit 1
 	fi
 fi

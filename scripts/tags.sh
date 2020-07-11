@@ -19,7 +19,7 @@ ignore="$ignore ( -name *.mod.c ) -prune -o"
 
 # Use make KBUILD_ABS_SRCTREE=1 {tags|cscope}
 # to force full paths for a non-O= build
-if [ "${srctree}" = "." -o -z "${srctree}" ]; then
+if [ "${srctree}" = "." ] || [ -z "${srctree}" ]; then
 	tree=
 else
 	tree=${srctree}/

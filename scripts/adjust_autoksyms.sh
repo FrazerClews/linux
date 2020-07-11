@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # SPDX-License-Identifier: GPL-2.0-only
 
 # Script to update include/generated/autoksyms.h and dependency files

@@ -294,6 +294,17 @@ xtags()
 	fi
 }
 
+help()
+{
+	printf "Generate tags or cscope files\n"
+	printf "Usage tags.sh <mode>\n"
+	printf "\n"
+	printf "mode may be any of: tags, TAGS, cscope\n"
+	printf "\n"
+	printf "Uses the following environment variables:\n"
+	printf "SUBARCH, SRCARCH, srctree\n"
+}
+
 # Support um (which uses SUBARCH)
 if [ "${ARCH}" = "um" ]; then
 	if [ "$SUBARCH" = "i386" ]; then
@@ -325,6 +336,16 @@ case "$1" in
 		rm -f TAGS
 		xtags etags
 		remove_structs=y
+		;;
+
+	"-h"|"--help")
+		help
+		;;
+
+	"$*")
+		printf "Invalid argument\n\n"
+		help
+		exit 12
 		;;
 esac
 

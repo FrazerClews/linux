@@ -233,7 +233,7 @@ elif [ "$qdisc" != "" ] ; then
 fi
 
 n=0
-m=$[$dur * 5]
+m=$(($dur * 5))
 hn="::1"
 if [ $use_netperf -ne 0 ] ; then
   if [ "$server" != "" ] ; then
@@ -282,11 +282,11 @@ if [ $use_netperf -ne 0 ] ; then
         ( ./netperf -H $np_server -l $dur -f m -j -t TCP_STREAM -- $np_cc -k P50_lATENCY,P90_LATENCY,LOCAL_TRANSPORT_RETRANS,LOCAL_SEND_THROUGHPUT,REQUEST_SIZE,RESPONSE_SIZE > netperf.$id.$flow_cnt ) &
       fi
     fi
-    flow_cnt=$[flow_cnt+1]
+    flow_cnt=$((flow_cnt+1))
   done
 
 # sleep for duration of test (plus some buffer)
-  n=$[dur+2]
+  n=$((dur+2))
   sleep $n
 
 # force graceful termination of netperf
@@ -313,13 +313,13 @@ if [ $use_netperf -ne 0 ] ; then
       r=`cat netperf.$id.$flow_cnt | grep -o "LOCAL_SEND_THROUGHPUT=[0-9]*" | grep -o "[0-9]*"`
     fi
     echo "rate for flow $flow_cnt: $r"
-    rate=$[rate+r]
+    rate=$((rate+r))
     if [ $details -ne 0 ] ; then
       echo "-----"
       echo "Details for cgroup $id, flow $flow_cnt"
       cat netperf.$id.$flow_cnt
     fi
-    flow_cnt=$[flow_cnt+1]
+    flow_cnt=$((flow_cnt+1))
   done
   if [ $details -ne 0 ] ; then
     echo ""
@@ -355,10 +355,10 @@ else
   while [ $flow_cnt -le $flows ] ; do
     (iperf3 -s -p $port -1 > /dev/null 2>&1) &
     ( iperf3 -c $host -p $port -i 0 -P 1 -f m -t $dur | grep receiver | grep -o "[0-9.]* Mbits" | grep -o "^[0-9]*" | grep -o "[0-9]*$" > iperf3.$id.$flow_cnt ) &
-    port=$[port+1]
-    flow_cnt=$[flow_cnt+1]
+    port=$((port+1))
+    flow_cnt=$((flow_cnt+1))
   done
-  n=$[dur+1]
+  n=$((dur+1))
   sleep $n
   flow_cnt=1
   rate=0
@@ -378,8 +378,8 @@ else
   if [ $details -ne 0 ] ; then
     echo "Rate for cgroup $id, flow $flow_cnt LOCAL_SEND_THROUGHPUT=$r"
   fi
-    rate=$[rate+r]
-    flow_cnt=$[flow_cnt+1]
+    rate=$((rate+r))
+    flow_cnt=$((flow_cnt+1))
   done
   if [ $details -ne 0 ] ; then
     delay=`grep "avg" ping.out | grep -o "= [0-9.]*/[0-9.]*" | grep -o "[0-9.]*$"`

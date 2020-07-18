@@ -19,7 +19,7 @@ T=/tmp/runlitmushist.sh.$$
 trap 'rm -rf $T' 0
 mkdir $T
 
-if test -d litmus
+if test -d "$(cd "$(dirname "$0")" && pwd)"/litmus
 then
 	:
 else

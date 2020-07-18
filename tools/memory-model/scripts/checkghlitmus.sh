@@ -9,38 +9,39 @@
 # Run from the Linux kernel tools/memory-model directory.  See the
 # parseargs.sh scripts for arguments.
 
-. scripts/parseargs.sh
+working_directory="$(cd "$(dirname "$0")" && pwd)"
+. ${working_directory}/parseargs.sh
 
 T=/tmp/checkghlitmus.sh.$$
 trap 'rm -rf $T' 0
 mkdir $T
 
 # Clone the repository if it is not already present.
-if test -d litmus
+if test -d "${working_directory}"/litmus
 then
 	:
 else
-	git clone https://github.com/paulmckrcu/litmus
-	( cd litmus; git checkout origin/master )
+	git clone https://github.com/paulmckrcu/litmus "${working_directory}"/litmus
+	( cd "${working_directory}"/litmus; git checkout origin/master )
 fi
 
 # Create any new directories that have appeared in the github litmus
 # repo since the last run.
 if test "$LKMM_DESTDIR" != "."
 then
-	find litmus -type d -print |
+	find "${working_directory}"/litmus -type d -print |
 	( cd "$LKMM_DESTDIR"; sed -e 's/^/mkdir -p /' | sh )
 fi
 
 # Create a list of the C-language litmus tests previously run.
-( cd $LKMM_DESTDIR; find litmus -name '*.litmus.out' -print ) |
+( cd $LKMM_DESTDIR; find "${working_directory}"/litmus -name '*.litmus.out' -print ) |
 	sed -e 's/\.out$//' |
 	xargs -r egrep -l '^ \* Result: (Never|Sometimes|Always|DEADLOCK)' |
 	xargs -r grep -L "^P${LKMM_PROCS}"> $T/list-C-already
 
 # Create a list of C-language litmus tests with "Result:" commands and
 # no more than the specified number of processes.
-find litmus -name '*.litmus' -exec grep -l -m 1 "^C " {} \; > $T/list-C
+find "${working_directory}"/litmus -name '*.litmus' -exec grep -l -m 1 "^C " {} \; > $T/list-C
 xargs < $T/list-C -r egrep -l '^ \* Result: (Never|Sometimes|Always|DEADLOCK)' > $T/list-C-result
 xargs < $T/list-C-result -r grep -L "^P${LKMM_PROCS}" > $T/list-C-result-short
 
@@ -48,7 +49,7 @@ xargs < $T/list-C-result -r grep -L "^P${LKMM_PROCS}" > $T/list-C-result-short
 sort $T/list-C-already $T/list-C-result-short | uniq -u > $T/list-C-needed
 
 # Run any needed tests.
-if scripts/runlitmushist.sh < $T/list-C-needed > $T/run.stdout 2> $T/run.stderr
+if "${working_directory}"/runlitmushist.sh < $T/list-C-needed > $T/run.stdout 2> $T/run.stderr
 then
 	errs=
 else

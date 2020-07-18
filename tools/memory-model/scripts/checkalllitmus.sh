@@ -19,9 +19,10 @@
 #
 # Author: Paul E. McKenney <paulmck@linux.vnet.ibm.com>
 
-. scripts/parseargs.sh
+working_directory="$(cd "$(dirname "$0")" && pwd)"
+. "${working_directory}"/parseargs.sh
 
-litmusdir=litmus-tests
+litmusdir=$(cd "${working_directory}"/../litmus-tests && pwd)
 if test -d "$litmusdir" -a -r "$litmusdir" -a -x "$litmusdir"
 then
 	:
@@ -41,11 +42,9 @@ fi
 # Find the checklitmus script.  If it is not where we expect it, then
 # assume that the caller has the PATH environment variable set
 # appropriately.
-if test -x scripts/checklitmus.sh
+if test -x "${working_directory}"/checklitmus.sh
 then
-	clscript=scripts/checklitmus.sh
-else
-	clscript=checklitmus.sh
+	clscript=${working_directory}/checklitmus.sh
 fi
 
 # Run the script on all the litmus tests in the specified directory

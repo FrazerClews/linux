@@ -28,7 +28,7 @@ else
 	exit 255
 fi
 
-echo Herd options: $herdoptions > $LKMM_DESTDIR/$litmus.out
-/usr/bin/time $LKMM_TIMEOUT_CMD herd7 $herdoptions $litmus >> $LKMM_DESTDIR/$litmus.out 2>&1
+echo Herd options: $herdoptions > $litmus.out
+/usr/bin/time $LKMM_TIMEOUT_CMD herd7 $herdoptions $litmus >> $litmus.out 2>&1
 
-scripts/judgelitmus.sh $litmus
+"$(cd "$(dirname "$0")" && pwd)"/judgelitmus.sh $litmus

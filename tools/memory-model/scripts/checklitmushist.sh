@@ -14,7 +14,8 @@
 #
 # Author: Paul E. McKenney <paulmck@linux.vnet.ibm.com>
 
-. scripts/parseargs.sh
+working_directory="$(cd "$(dirname "$0")" && pwd)"
+. ${working_directory}/parseargs.sh
 
 T=/tmp/checklitmushist.sh.$$
 trap 'rm -rf $T' 0
@@ -24,7 +25,7 @@ if test -d litmus
 then
 	:
 else
-	echo Run scripts/initlitmushist.sh first, need litmus repo.
+	echo Run "${working_directory}"/initlitmushist.sh first, need litmus repo.
 	exit 1
 fi
 
@@ -32,7 +33,7 @@ fi
 # The initial output is created here to avoid clobbering the output
 # generated earlier.
 mkdir $T/results
-find litmus -type d -print | ( cd $T/results; sed -e 's/^/mkdir -p /' | sh )
+find ${working_directory}/../litmus -type d -print | ( cd $T/results; sed -e 's/^/mkdir -p /' | sh )
 
 # Create the list of litmus tests already run, then remove those that
 # are excluded by this run's --procs argument.
@@ -44,7 +45,7 @@ xargs < $T/list-C-already -r grep -L "^P${LKMM_PROCS}" > $T/list-C-short
 # Redirect output, run tests, then restore destination directory.
 destdir="$LKMM_DESTDIR"
 LKMM_DESTDIR=$T/results; export LKMM_DESTDIR
-scripts/runlitmushist.sh < $T/list-C-short > $T/runlitmushist.sh.out 2>&1
+"${working_directory}"/runlitmushist.sh < $T/list-C-short > $T/runlitmushist.sh.out 2>&1
 LKMM_DESTDIR="$destdir"; export LKMM_DESTDIR
 
 # Move the newly generated .litmus.out files to .litmus.out.new files
@@ -56,5 +57,5 @@ ddir=`awk -v c="$cdir" -v d="$LKMM_DESTDIR" \
   sed -e 's,^.*$,cp & '"$ddir"'/&.new,' | sh )
 
 sed < $T/list-C-short -e 's,^,'"$LKMM_DESTDIR/"',' |
-	sh scripts/cmplitmushist.sh
+	sh "${working_directory}"/cmplitmushist.sh
 exit $?
